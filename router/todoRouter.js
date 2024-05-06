@@ -13,12 +13,12 @@ import {
 const router = express.Router();
 
 const todoRouter = (upload) => {
-  router.get("/all", fetchAllTodos);
-  router.get("/one/:id", singleTodo);
-  router.post("/add", addTodo);
-  router.put("/update/:id", updateTodo);
-  router.delete("/delete/:id", deleteTodo);
-  router.get("/filter", filterTodosByStatus);
+  router.get("/", fetchAllTodos);
+  router.get("/:id", singleTodo);
+  router.post("/", addTodo);
+  router.put("/:id", updateTodo);
+  router.delete("/:id", deleteTodo);
+  router.get("/todos/filter", filterTodosByStatus);
   router.post("/upload", upload.single("file"), uploadCSV);
   router.get("/download", downloadCSV);
 

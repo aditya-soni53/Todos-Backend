@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // Todo routes
-app.use("/api/todo", todoRouter(upload));
+app.use("/todos", todoRouter(upload));
 
 // Database connection
 dbConnection();
